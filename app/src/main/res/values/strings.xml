@@ -7,5 +7,12 @@
     <string name="intent_host">cprest</string>
     <string name="connect_to_twitter">Connect to Twitter</string>
     <string name="profile_image">Profile Image</string>
+    <string name="icon">Icon</string>
+    <string name="whats_happening">What\'s happening?</string>
+    <string name="tweet">Tweet</string>
+    <string name="compose">Compose</string>
+    <string name="reply">Reply</string>
+    <string name="retweet">Retweet</string>
+    <string name="like">Like</string>
 
 </resources>

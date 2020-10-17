@@ -1,8 +1,6 @@
-package com.codepath.apps.restclienttemplate;
+package com.codepath.apps.simpletweet;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +9,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.codepath.apps.restclienttemplate.activities.DetailActivity;
-import com.codepath.apps.restclienttemplate.models.Tweet;
-
-import org.parceler.Parcels;
+import com.codepath.apps.simpletweet.models.Tweet;
 
 import java.util.List;
 
@@ -84,28 +77,14 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
             tvTimestamp = itemView.findViewById(R.id.tvTimestamp);
+            container = itemView.findViewById(R.id.container);
         }
 
-        public void bind(Tweet tweet) {
+        public void bind(final Tweet tweet) {
             tvBody.setText(tweet.body);
             tvScreenName.setText(tweet.user.screenName);
-            tvTimestamp.setText(tweet.getFormattedTimestamp());
+            tvTimestamp.setText(tweet.getFormattedTimeDiff());
             Glide.with(context).load(tweet.user.profileImageUrl).transform(new RoundedCorners(10)).into(ivProfileImage);
-
-//            container.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    // 2. Navigate to a new activity on tap
-//                    Intent i = new Intent(context, DetailActivity.class);
-//                    i.putExtra("tweet", Parcels.wrap(tweets));
-//                    Pair<View, String> p1 = Pair.create((View)tvScreenName, "overview");
-//                    Pair<View, String> p2 = Pair.create((View)tvBody, "title");
-//                    Pair<View, String> p3 = Pair.create((View)tvTimestamp, "timestamp");
-//                    ActivityOptionsCompat options = ActivityOptionsCompat.
-//                            makeSceneTransitionAnimation((Activity) context, p1, p2, p3);
-//                    context.startActivity(i, options.toBundle());
-//                }
-//            });
         }
     }
 }

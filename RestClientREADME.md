@@ -110,8 +110,9 @@ In the `src/com.codepath.apps.restclienttemplate.models`, create the models that
 For example, if you were connecting to Twitter, you would want a Tweet model as follows:
 
 ```java
+```java
 // models/Tweet.java
-package com.codepath.apps.restclienttemplate.models;
+package com.codepath.apps.simpletweet.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Embedded;
